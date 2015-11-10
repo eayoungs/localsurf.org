@@ -7,13 +7,14 @@
 
 
 import requests
+import headers
 
 
 # **********************************************************************
 # From: NOAA Web svs http://www.ncdc.noaa.gov/cdo-web/webservices/v2
 # **********************************************************************
 
-# Primary API  for noaa Climate Data Online [CDO]
+# Primary API for noaa Climate Data Online [CDO]
 # http://www.ncdc.noaa.gov/cdo-web/api/v2/{endpoint}
 #
 # Sample usage (requires token):
@@ -25,10 +26,14 @@ import requests
 # **********************************************************************
 
 # NWS_Coastal_Primary_URL
-"http://www.wrh.noaa.gov/pqr"
-"http://www.wrh.noaa.gov/total_forecast/marine.php?marine=PZZ255"
+# "http://www.wrh.noaa.gov/pqr"
+# "http://www.wrh.noaa.gov/total_forecast/marine.php?marine=PZZ255"
 
 # NWS_Coastal_Data_URL
-"http://www.wrh.noaa.gov/total_forecast/marine.php?marine=PZZ255"
+# "http://www.wrh.noaa.gov/total_forecast/marine.php?marine=PZZ255"
 
+base_url = 'http://www.ncdc.noaa.gov/cdo-web/api/v2/datasets'
+headers = headers.token
+data = requests.get(base_url, headers=headers)
 
+print(data)

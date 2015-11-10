@@ -1,4 +1,6 @@
 .commitLog
+headers.py
 
 *.sublime-*
 .cache/*
+*.pyc
